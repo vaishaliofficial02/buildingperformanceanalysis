@@ -1,0 +1,111 @@
+Impose Landon
+class Building:
+yselt,
+insulation_level, window_type, hvac_efficiency,
+area, external_temp):
+selI.window type
+self. insdla topeleveindon eupetton lengle
+#'poor', 'average',
+"good'
+= window_type
+'double', 'triple'
+self.hvac_efficiency = hvac_efficiency # 0.0 to 1.0
+self.area = area
+#in souare meters
+self.external_temp = external_temp # average outdoor temperature
+self.indoor tenp = 22 # desired indoor temperature in Celsius
+def insulation factor (self) :
+racrors =
+10001:1.5，
+'average': 1.0, 'good': 0.5)
+return factors.get (self.insulation level, 1.0)
+window_factor (self):
+factors = ('single': 1.8, "double': 1.2,
+'triole': 0.8}
+factors.get (self.window_type, 1.2)
+def calculate_heat_10ss (self) :
+delta tenp = abs(self.indoor tenp - self.external temp)
+heat_loss = delta_tenp * self.area * self. insulation_factor() * self.window_factor ()
+Jecuse near 105s
+def energy_consumption (self):
+energy_needed = heat _loss / max(self.hvac_efficiency, 0.01)
+# avoid divide-by-zero
+energy_needed
+def performance rating(self):
+energy = self.energy_consunption()
+return 'Excellent' elif energy ‹ 20000:
+"Good"
+elif energy ‹ 30000: return 'Average'
+2182: return 'Poor'
+
+def energy_consumption (self):
+heat_loss = self. calculate _heat_loss()
+energy needed = heat_loss / max (self.hvac_efficiency, 0.01)
+# avoid divide-by-zero
+return energy needed
+det pertormance racing(setty.
+energy = self.energy_consumption()
+if energy ‹ 10000:
+return 'Excellent'
+elif energy < 20000:
+return 'Good'
+lif energy ‹ 30000
+ceturn 'Average
+else:
+return "Poor!
+def report (self) :
+print ("=== Building Performance Report ===")
+print ("Insulation Level: (self. insulation_level)")
+print（m=s
+print (f"Performance Rating: (self-performance_rating())")
+* Utility to run musciple bullding scenarios def simulate_buildings () :
+insulation _options = ['poor', 'average', 'good']
+rindow_options = ['single', 'double', 'triple']
+print （"Simulating 5 building scenarios.・・/a"） for i in range (5) :
+insulation = randon, choice (insulation_options)
+windows = random. choice (window_options)
+hvac _eff = round (random. uniform(0.4, 0.95), 2)
+area = random. randint (80, 300)
+in square meters
+ext temp = random. randint (-10, 35)
+
+elif energy ‹ 20000:
+return 'Good'
+elif energy ‹ 30000: return 'Average'
+else:
+return 'Poor'
+def report (self) :
+print ("=== Building Performance Report ===")
+print ({"Insulation Level: (self. insulation_level)")
+print (f"Window Type: (self.window_type)")
+print (£"HVAC Efficiency: (self.hvac_efficiency)")
+print (f"Floor Area: (self.area) m=*)
+print (I"External Temperature: (self.external_temp) °C*)
+print (f"Heat Loss:
+(self. calculate_heat_1038() :.2f) units")
+print (f"Estimated Energy Consumption: (self.energy_consumption ():.2f) units") print ("Performance Rating: (self-performance_rating()y")
+# Utility to run multiple building scenarios
+def simulate_buildings () :
+insulation_options = ['poor', 'average',
+window_options = ['single',
+"double',
+'good']
+'triple']
+print ("Simulating 5 building scenarios... \n") for i in range (5):
+insulation = landon. choice (insulation_options)
+windows = random. choice (window_options)
+hvac_eff = round (randon.uniform(0.4,
+0.95),
+2)
+area = random. landint (80, 300)
+＃in
+square
+meters
+ext_temp = random. randint (-10, 35)
+building = Building (insulation, windows, hvac_eff, area, ext_temp)
+print (f"\n--- Scenario (i + 1) ---")
+building report ()
+if
+name
+main
+simulate_buildings ()
